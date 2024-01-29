@@ -1,0 +1,258 @@
+
+Sales
+-----
+
+
+2024
+
+int[,]  arr=new int[4,3]
+
+	product1     product2   product3
+1        (0,0) 10     (0,1)20     (0,2)30
+2         (1,0)   0    (1,1)20      (1,2)30
+3            100        120        130
+4           120         23         123
+
+------------------------------------------------
+Book a movie ticket
+3 sites
+        bookMyshow     amazon       blinkit      
+         100           10            0    
+         40           20            20
+         202          4              6
+
+
+int[][] ticketsSoldCounter=new int[3][];
+ticketSoldConter[0]=new int[40];
+ticketSoldConter[1]=new int[7];
+ticketSoldConter[2]=new int[50];
+
+using System;
+Arrays
+
+using System.Collections;//Non Generic
+any type of data into the mentioned collections
+Stack s=new Stack();
+s.Push(10);
+s.Push(20.9f);
+s.push(new DateTime(2024,09,01));
+
+
+Stack
+Queue
+ArrayList
+HashTable
+SortedSet
+
+
+
+
+using System.Collections.Generic; //Generic
+//u have the specify the name of teh datatype while working witht the collection
+Stack<int> st=new Stack<int>();
+
+Generic                      non-Generic
+List				ArrayList
+LinkedList			-
+Dictionary<k,v>                Hashtable
+SortedList<K,V>                SortedList
+SortedSet<T>			-
+SortedDictionary<K,V>		-
+Stack                           Stack
+Queue				Queue
+-------------------------------------------------------------------
+
+
+Extension Method:
+
+A method that allows  the developer to extend the functionality of an  existing type without creating a derived type, nor recompiling, or don't 
+need to modify the original type.
+
+1) special kind of static method within a static class
+2) called as if it was an instance method of the extended type.(taking the parameter of class using "this" keyword)
+-------------------------------------------------------------------------
+Delegates
+---------
+
+Delegate means a declaration which is having the same signature declaration as that of the method, which it(delegate) will be calling(method).
+
+Employee
+{
+empid,ename,city,state,etc---> properties
+Add,Delete,List,ShowSingleEmployee----> methods
+
+Events for the employee
+
+		   Delegate
+When ApplyForLeave---------->Then LeaveApprovalMethod
+
+LeaveApprovalMethod()
+{
+		24Jan          25thJan
+1) Decides the start date and end date of the leave
+2) type of leave avail--Casual,Compoff etc
+3) approval received
+4) TotalNumberOfLeavesRemaining---10-2=8
+}
+
+Promoted
+ChangedHisCity
+Resigning
+}
+
+
+
+Event handling in your programming, u need delegates
+Multi-threading, u need delegates
+Multi-tasking, u need delegates.
+
+
+1) If there was no delegate:
+a)Create object of class
+b)call the method using object of the class and pass the parameters.
+
+
+1) If we have delegate:
+a)Create object of class
+b)Create object of delegate
+c)To the delegate object pass the method name as parameter
+
+
+Whenever a delegate has a return type(other than void) then it is a Unicast Delegate(ie it can only call one method)
+
+Whenever a delegate has void return type, it is MultiCast Delegate, ie it can call multiple methods with the same signature, ofcourse the return type must be void.
+
+Lambda types:
+1) Lambda Expression
+
+2a) Function Lambda: will have a return type(float,double,string etc)-- max number of paramters 16 including return type.
+2b) Action Lambda: will have a void return type--- max number of parameters 16
+2c) Predicate Lambda: only true or false is returned
+
+*************************************************************************
+ExceptionHandling
+FileHandling&Serialization
+
+Files: using System.IO
+Class File and Directory have static methods with them and so all methods are accessible with the classname.
+
+Class Filestream, FileInfo,DirectoryInfo which have instance methods ie class object is compulsory.
+
+
+Compulsory Write Access
+OpenOrCreate----open if exists, otherwise create( Read/Write/ReadWrite)
+Create----create a file, it exists overwrite
+CreateNew---create a file, if exists IOException
+
+Append---
+------------------------------------------------
+TextFile---->StreamReader,StreamWriter
+BinaryFile---->BinaryREader,BinaryWriter
+XML File---> XMLReader,XMLWriter
+-----------------------------------------------
+
+Object(data write to the file----> Serialization
+Read that object(Data) back from the file----> Deserialization
+Employee
+
+
+emp----> empid=10,ename="aparna",city="pune"----> Serialization
+Read this object back---> Deserialization
+
+Serialization:
+1) create a class
+2) mark the class as seriazable(so that its object can be written to a file) this serialization attribute, 
+is a permission from the class to write its data to the file.
+
+
+Types of Serialization:
+1) Binary: binary format
+using System.Runtime.Serialization.Formatters.Binary.
+
+NonSerialized is marked with the variable of the property the 
+field will not be serialized.
+
+
+2) XML: xml format
+using System.Xml.Serialization;
+NonSerialized is marked with the variable of the property the 
+field will  be serialized. Anything which is public will be serialized in xml serialized.
+XML serialization doesn't adhere to [NonSerialized], so make the propery private.
+
+
+3) JSON: json format
+using System.Text.Json;
+
+Install NewtonSoft---Nuget Package Manager--browse--- type name and install
+2) open package manager console
+install-package newtonsoft.jsonget-help get-package
+----------------------------------------------------------
+NAME
+    Get-Package
+    
+SYNOPSIS
+    Gets the set of installed packages. Use the -Updates flag to list packages updates available from the package source.
+    
+    
+SYNTAX
+    Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName <string>] [-Filter <string>] [-First <int>] [-Skip <int>] [-AllVersions] [-IncludePrerelease] [-PageSize] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    Gets the set of installed packages. Use the -Updates flag to list packages updates available from the package source.
+    
+
+RELATED LINKS
+    Online version: https://docs.nuget.org/
+    Get-Package 
+
+REMARKS
+    To see the examples, type: "get-help Get-Package -examples".
+    For more information, type: "get-help Get-Package -detailed".
+    For technical information, type: "get-help Get-Package -full".
+    For online help, type: "get-help Get-Package -online"
+
+
+PM> get-package
+
+Id                                  Versions                                 ProjectName                                                                                                                                                 
+--                                  --------                                 -----------                                                                                                                                                 
+Newtonsoft.Json                     {13.0.3}                                 FileWorkingDemo                                                                                                                                             
+Newtonsoft.Json                     {13.0.3}                                 SerializationDemoWithFiles  
+
+
+
+4) SOAP(Simple Object Access Protocol): soap format
+
+
+
+
+
+
+
+
+DataStructures
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

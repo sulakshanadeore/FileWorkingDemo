@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileWorkingDemo", "FileWorkingDemo\FileWorkingDemo.csproj", "{B20A4F04-F57A-4060-9273-99DFDE9EB4CD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E1554C5D-43C6-43C8-AE10-D048470C820C} = {E1554C5D-43C6-43C8-AE10-D048470C820C}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializationDemoWithFiles", "SerializationDemoWithFiles\SerializationDemoWithFiles.csproj", "{E1554C5D-43C6-43C8-AE10-D048470C820C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{B20A4F04-F57A-4060-9273-99DFDE9EB4CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B20A4F04-F57A-4060-9273-99DFDE9EB4CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B20A4F04-F57A-4060-9273-99DFDE9EB4CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1554C5D-43C6-43C8-AE10-D048470C820C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1554C5D-43C6-43C8-AE10-D048470C820C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1554C5D-43C6-43C8-AE10-D048470C820C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1554C5D-43C6-43C8-AE10-D048470C820C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
